@@ -1,2 +1,2 @@
-# generative-ai
-Generative AI resources
+# Generative AI Resources
+Notebooks, code, and stuff.
