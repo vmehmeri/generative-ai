@@ -25,8 +25,8 @@ Let’s start by setting a few environment variables that will be used throughou
 
 Download the code and files used throughout the tutorial:
 ```bash
-git clone https://github.com/GoogleCloudPlatform/ai-on-gke
-cd ai-on-gke/tutorials/finetuning-llama-7b-on-l4
+git clone https://github.com/vmehmeri/generative-ai
+cd generative-ai/fine-tuning/text/finetuning-llama-7b-on-l4
 ```
 
 Run the following commands to set the env variables and make sure to replace `<my-project-id>`:
