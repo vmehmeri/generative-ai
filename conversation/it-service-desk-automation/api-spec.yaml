@@ -1,0 +1,41 @@
+openapi: 3.0.2
+info:
+  title: "Ticket Logger Function"
+  description: "A simple API that logs an IT ticket."
+  version: "1.0.0"
+servers: 
+  - url: "YOUR_FUNCTION_URL"
+
+paths:
+  /ticket_logger:
+    post:
+      summary: "Logs ticket"
+      operationId: "submitIssue"
+      requestBody:
+        description: Issue
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/submitIssue'
+      responses:
+        "200":
+          description: "A successful response."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  issue_id:
+                    type: string
+components:
+  schemas:
+    submitIssue:
+      required:
+        - corporate_alias
+        - issue
+      type: object
+      properties:
+        corporate_alias:
+          type: string
+        issue:
+          type: string
