@@ -10,7 +10,7 @@ This folder contains code and resources for using Vertex AI Conversation in the 
 This deployment requires setting up a generative playbook. See below for how to configure the playbook.
 
 ### Tool 
-First, you must create a tool in Dialogflow CX -> Generative resources -> Tools (note: you may not have access to it currently).
+First, you must create a tool in Dialogflow **CX -> Generative resources -> Tools** (note: you may not have access to it currently).
 
 Configure the tool as follows:
 
@@ -32,3 +32,31 @@ Configure an example for the playbook as follows:
 
 The tool use step in the example is configured as follows:
 ![tool use configuration](tool-use.jpg "Tool use configuration")
+
+## Generative fallback
+Make sure generative fallback is enabled in the **sys.no-match-default** event handler in the bot's **Start Page**.
+
+Then, navigate to **Agent settings -> ML -> Generative AI -> Generative fallback**. Select the **Example** template, click on Edit, then use the following prompt (or write your own):
+
+```
+You are a friendly AI assistant that helps employees with IT related questions.
+
+If the user asks a question unrelated to IT or engage in any kind of chit chat, then say that you cannot help with that.
+
+Otherwise, if the question is related to IT, for example:
+- Networking
+- Computer, laptops
+- Mobile phones
+- Internet, Wifi, Ethernet
+- Computer accessories
+
+Then, answer the question as an IT expert would.
+
+The conversation between the human and you so far was:
+${conversation USER:"Human:" AGENT:"AI"}
+
+Then, the human asked:
+$last-user-utterance
+
+You say:
+```
