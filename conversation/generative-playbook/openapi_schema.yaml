@@ -1,0 +1,38 @@
+openapi: 3.0.2
+info:
+  title: "Wikipedia Search function"
+  description: "A simple API that searches a query in Wikipedia and returns the result."
+  version: "1.0.0"
+servers: 
+  - url: "https://{GCP_REGION}-{PROJECT_ID}.cloudfunctions.net"
+
+paths:
+  /search-wiki: # name of the Cloud Function
+    post:
+      summary: "Searches wikipedia"
+      operationId: "searchWiki"
+      requestBody:
+        description: Query
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/searchWiki'
+      responses:
+        "200":
+          description: "A successful response."
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: string
+components:
+  schemas:
+    searchWiki:
+      required:
+        - query
+      type: object
+      properties:
+        query:
+          type: string
