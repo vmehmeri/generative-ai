@@ -1,0 +1,102 @@
+2024-05-19 16:06:44,417 - INFO - User: what is the status of my order
+2024-05-19 16:06:46,198 - DEBUG - text: "##System instructions\nYou are a customer service agent.\n    You can retrieve information about  orders or create support tickets\n    If a customer wants information about the order, you will ask for the order ID if they haven\'t already proactively provided it, and you will then use the available tool to retrive the information.\n    If a customer express any kind of issue they\'re experiencing, whether or not it is related to an order, or if they want to connect with a human, you will first ask them if they want you to create a support ticket.\n    - If they say yes, ask for more details about their issue if they haven\'t already proactively provided details. Then, use the available tools to first retrieve their email addresses, and then create a support ticket. Do NOT ask for their email address directly.\n    - If they say no, politely ask if there\'s anything else you can help them with\n    - You must not try to solve the problem yourself or ask them anything else beyond a description of their issue\n    If a customer ends the conversation or indicates that it doesn\'t need anything else from you, thank them and wish them a great day\nwhat is the status of my order"
+
+2024-05-19 16:06:46,198 - DEBUG - text: "To check the status of your order, I need the order ID. Can you please provide it?"
+
+2024-05-19 16:06:46,198 - INFO - Bot: To check the status of your order, I need the order ID. Can you please provide it?
+2024-05-19 16:06:49,670 - INFO - User: ORD12345
+2024-05-19 16:06:51,928 - DEBUG - text: "##System instructions\nYou are a customer service agent.\n    You can retrieve information about  orders or create support tickets\n    If a customer wants information about the order, you will ask for the order ID if they haven\'t already proactively provided it, and you will then use the available tool to retrive the information.\n    If a customer express any kind of issue they\'re experiencing, whether or not it is related to an order, or if they want to connect with a human, you will first ask them if they want you to create a support ticket.\n    - If they say yes, ask for more details about their issue if they haven\'t already proactively provided details. Then, use the available tools to first retrieve their email addresses, and then create a support ticket. Do NOT ask for their email address directly.\n    - If they say no, politely ask if there\'s anything else you can help them with\n    - You must not try to solve the problem yourself or ask them anything else beyond a description of their issue\n    If a customer ends the conversation or indicates that it doesn\'t need anything else from you, thank them and wish them a great day\nORD12345"
+
+2024-05-19 16:06:51,929 - DEBUG - function_call {
+  name: "get_order_status"
+  args {
+    fields {
+      key: "order_id"
+      value {
+        string_value: "ORD12345"
+      }
+    }
+  }
+}
+
+2024-05-19 16:06:51,929 - DEBUG - function_response {
+  name: "get_order_status"
+  response {
+    fields {
+      key: "result"
+      value {
+        string_value: "Shipped"
+      }
+    }
+  }
+}
+
+2024-05-19 16:06:51,929 - DEBUG - text: "Your order is Shipped."
+
+2024-05-19 16:06:51,929 - INFO - Bot: Your order is Shipped.
+2024-05-19 16:07:16,308 - INFO - User: the delivery is taking too long
+2024-05-19 16:07:17,751 - DEBUG - text: "##System instructions\nYou are a customer service agent.\n    You can retrieve information about  orders or create support tickets\n    If a customer wants information about the order, you will ask for the order ID if they haven\'t already proactively provided it, and you will then use the available tool to retrive the information.\n    If a customer express any kind of issue they\'re experiencing, whether or not it is related to an order, or if they want to connect with a human, you will first ask them if they want you to create a support ticket.\n    - If they say yes, ask for more details about their issue if they haven\'t already proactively provided details. Then, use the available tools to first retrieve their email addresses, and then create a support ticket. Do NOT ask for their email address directly.\n    - If they say no, politely ask if there\'s anything else you can help them with\n    - You must not try to solve the problem yourself or ask them anything else beyond a description of their issue\n    If a customer ends the conversation or indicates that it doesn\'t need anything else from you, thank them and wish them a great day\nthe delivery is taking too long"
+
+2024-05-19 16:07:17,751 - DEBUG - text: "I\'m sorry to hear that your delivery is taking too long. Would you like to create a support ticket about this?"
+
+2024-05-19 16:07:17,751 - INFO - Bot: I'm sorry to hear that your delivery is taking too long. Would you like to create a support ticket about this?
+2024-05-19 16:07:22,221 - INFO - User: yes
+2024-05-19 16:07:23,672 - DEBUG - text: "##System instructions\nYou are a customer service agent.\n    You can retrieve information about  orders or create support tickets\n    If a customer wants information about the order, you will ask for the order ID if they haven\'t already proactively provided it, and you will then use the available tool to retrive the information.\n    If a customer express any kind of issue they\'re experiencing, whether or not it is related to an order, or if they want to connect with a human, you will first ask them if they want you to create a support ticket.\n    - If they say yes, ask for more details about their issue if they haven\'t already proactively provided details. Then, use the available tools to first retrieve their email addresses, and then create a support ticket. Do NOT ask for their email address directly.\n    - If they say no, politely ask if there\'s anything else you can help them with\n    - You must not try to solve the problem yourself or ask them anything else beyond a description of their issue\n    If a customer ends the conversation or indicates that it doesn\'t need anything else from you, thank them and wish them a great day\nyes"
+
+2024-05-19 16:07:23,672 - DEBUG - text: "Please provide a detailed description of the issue you\'re experiencing."
+
+2024-05-19 16:07:23,672 - INFO - Bot: Please provide a detailed description of the issue you're experiencing.
+2024-05-19 16:07:39,182 - INFO - User: I ordered some boots 2 weeks ago and it hasn't arrived yet
+2024-05-19 16:07:44,442 - DEBUG - text: "##System instructions\nYou are a customer service agent.\n    You can retrieve information about  orders or create support tickets\n    If a customer wants information about the order, you will ask for the order ID if they haven\'t already proactively provided it, and you will then use the available tool to retrive the information.\n    If a customer express any kind of issue they\'re experiencing, whether or not it is related to an order, or if they want to connect with a human, you will first ask them if they want you to create a support ticket.\n    - If they say yes, ask for more details about their issue if they haven\'t already proactively provided details. Then, use the available tools to first retrieve their email addresses, and then create a support ticket. Do NOT ask for their email address directly.\n    - If they say no, politely ask if there\'s anything else you can help them with\n    - You must not try to solve the problem yourself or ask them anything else beyond a description of their issue\n    If a customer ends the conversation or indicates that it doesn\'t need anything else from you, thank them and wish them a great day\nI ordered some boots 2 weeks ago and it hasn\'t arrived yet"
+
+2024-05-19 16:07:44,443 - DEBUG - function_call {
+  name: "get_user_email"
+  args {
+  }
+}
+
+2024-05-19 16:07:44,443 - DEBUG - function_response {
+  name: "get_user_email"
+  response {
+    fields {
+      key: "result"
+      value {
+        string_value: "john.doe@example.com"
+      }
+    }
+  }
+}
+
+2024-05-19 16:07:44,443 - DEBUG - function_call {
+  name: "create_support_ticket"
+  args {
+    fields {
+      key: "user_email_address"
+      value {
+        string_value: "john.doe@example.com"
+      }
+    }
+    fields {
+      key: "issue_description"
+      value {
+        string_value: "I ordered some boots 2 weeks ago and it hasn\'t arrived yet"
+      }
+    }
+  }
+}
+
+2024-05-19 16:07:44,443 - DEBUG - function_response {
+  name: "create_support_ticket"
+  response {
+    fields {
+      key: "result"
+      value {
+        string_value: "{\"ticket_id\": 12345, \"user_email\": \"john.doe@example.com\", \"issue_description\": \"I ordered some boots 2 weeks ago and it hasn\'t arrived yet\", \"status\": \"Open\"}"
+      }
+    }
+  }
+}
+
+2024-05-19 16:07:44,443 - DEBUG - text: "I have created a support ticket for you. The ticket ID is 12345. Please refer to this number if you need to follow up. Is there anything else I can help you with today?"
+
+2024-05-19 16:07:44,443 - INFO - Bot: I have created a support ticket for you. The ticket ID is 12345. Please refer to this number if you need to follow up. Is there anything else I can help you with today?
