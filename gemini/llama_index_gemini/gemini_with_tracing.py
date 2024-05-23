@@ -1,17 +1,10 @@
 """Llama index module to interact with Gemini"""
 from llama_index.core.llms import ChatMessage
 from llama_index.llms.gemini import Gemini
-from llama_index.core.tools import BaseTool, FunctionTool
-from llama_index.core.agent import FunctionCallingAgentWorker
 from traceloop.sdk import Traceloop
 import os 
 
 
-def multiply(a: int, b: int) -> int:
-    """Multiple two integers and returns the result integer"""
-    return a * b
-
-multiply_tool = FunctionTool.from_defaults(fn=multiply)
 
 Traceloop.init(
   disable_batch=True, 
