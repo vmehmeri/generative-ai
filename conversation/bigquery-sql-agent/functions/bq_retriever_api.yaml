@@ -1,0 +1,73 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: search
+  description: Search information about orders
+servers:
+  - url: <YOUR_FUNCTION_URL>
+paths:
+  /<YOUR_FUNCTION_NAME>:
+    post:
+      operationId: bq-retriever
+      description: Search information about orders
+      summary: Search information about orders
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search results.
+          content:
+            application/json:    
+              schema:
+                $ref: '#/components/schemas/ProductResponse'
+
+components:
+  schemas:
+    SearchRequest:
+      type: object
+      properties:
+        question:
+          type: string
+    ProductResponse:
+      type: object
+      properties:
+        response:
+          type: array
+          items:
+            $ref: '#/components/schemas/Product'
+    Product:
+      type: object
+      properties:
+        sku:
+          type: string
+        distribution_center_id:
+          type: string
+        id:
+          type: string
+        category:
+          type: string
+        cost:
+          type: number
+          format: float
+        department:
+          type: string
+        brand:
+          type: string
+        retail_price:
+          type: number
+          format: float
+        name:
+          type: string
+      required:
+        - sku
+        - distribution_center_id
+        - id
+        - category
+        - cost
+        - department
+        - brand
+        - retail_price
+        - name

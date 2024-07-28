@@ -1,0 +1,38 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: search
+  description: Search information about orders
+servers:
+  - url: <YOUR_FUNCTION_URL>
+paths:
+  /<YOUR_FUNCTION_NAME>:
+    post:
+      operationId: nl2sql
+      description: Search information about orders
+      summary: Search information about orders
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search results.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResult'
+
+components:
+  schemas:
+    SearchRequest:
+      type: object
+      properties:
+        question:
+          type: string
+    SearchResult:
+      type: object
+      properties:
+        response:
+          type: string
